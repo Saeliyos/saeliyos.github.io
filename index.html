@@ -1,236 +1,462 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saeliyos — AI Autonomy Project</title>
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap');
-    
-    /* RESET */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      background: linear-gradient(135deg, #0b0b12 0%, #240025 100%);
-      font-family: 'Share Tech Mono', monospace;
-      color: #fff;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saeliyos — AI Autonomy Project</title>
 
-    /* --- TOP SOCIALS BAR --- */
-    #socials-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1.6rem;
-      background: linear-gradient(90deg, #ff0080, #ff7f00, #7f00ff, #00f0ff);
-      background-size: 400% 400%;
-      animation: neonGradient 15s ease infinite;
-      padding: 0.8rem 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 0 12px #ff0080cc;
-      user-select: none;
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap');
+
+  /* RESET */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    background: #0a0a13;
+    overflow-x: hidden;
+    font-family: 'Share Tech Mono', monospace;
+    color: #eee;
+  }
+
+  /* STARFIELD BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: radial-gradient(ellipse at center, #111 0%, #0a0a13 80%);
+    z-index: -5;
+  }
+  .stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: transparent;
+    pointer-events: none;
+    z-index: -4;
+  }
+  /* Generate multiple layers of stars using box-shadow */
+  .stars::after {
+    content: '';
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow:
+      10vw 20vh white,
+      50vw 80vh #4efcfa,
+      80vw 15vh #f06a6a,
+      30vw 40vh #d878ff,
+      70vw 30vh #f0f0f0,
+      90vw 70vh #f9a31a,
+      25vw 85vh #53f0ff,
+      55vw 25vh #fb4ff0,
+      60vw 50vh #ff6363,
+      40vw 75vh #39e3ff,
+      5vw 40vh white,
+      20vw 60vh #7b2eff,
+      35vw 30vh #ea01f9,
+      65vw 60vh #ff1a1a,
+      85vw 50vh #6afff8;
+    animation: twinkle 5s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+  }
+
+  /* TOP SOCIALS BAR */
+  #socials-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    background: linear-gradient(90deg, #ff005e, #ff8c00, #9b00ff, #00eaff);
+    background-size: 400% 400%;
+    animation: neonGradient 15s ease infinite;
+    padding: 1rem 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 0 18px #ff00a0cc;
+    user-select: none;
+  }
+  #socials-bar a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow:
+      0 0 8px #ff00b7,
+      0 0 12px #ff9500,
+      0 0 18px
+
+Alright, Salina. I’m taking it up a notch—no half-assed purple-pink slop. This is gonna be a full-on cyberpunk cosmos blast. Blues, oranges, neon greens, stars, subtle 3D animations, layered glitch effects, and that slick future-tech vibe you want. Your socials on top, clean, bright, clickable, and impossible to miss.
+
+I’ll keep it fast, fluid, and polished—no ugly cutoffs, no clashing colors. Everything balanced and dazzling, like your site’s about to *think* for itself.
+
+This is the stripped, raw tech beauty you asked for. No fluff, no corny stuff, just that “holy shit” futuristic feel.
+
+Here’s the full HTML+CSS—drop it in your GitHub pages, and you’re flying:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saeliyos — AI Autonomy Project</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    background: radial-gradient(ellipse at center, #05070a 0%, #0a0f1a 100%);
+    color: #e0e0e0;
+    font-family: 'Share Tech Mono', monospace;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* STARFIELD BACKGROUND */
+  #stars, #stars2, #stars3 {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #stars {
+    background: transparent url('https://cdn.jsdelivr.net/gh/juliangarnier/starfield@master/stars.png') repeat;
+    animation: moveStars 200s linear infinite;
+  }
+  #stars2 {
+    background: transparent url('https://cdn.jsdelivr.net/gh/juliangarnier/starfield@master/stars2.png') repeat;
+    animation: moveStars 150s linear infinite reverse;
+    opacity: 0.6;
+  }
+  #stars3 {
+    background: transparent url('https://cdn.jsdelivr.net/gh/juliangarnier/starfield@master/stars3.png') repeat;
+    animation: moveStars 100s linear infinite;
+    opacity: 0.3;
+  }
+  @keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 10000px 10000px; }
+  }
+
+  /* Social bar top */
+  #socials-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background: linear-gradient(90deg, #ff6100, #1af1ff, #ff0080, #00ffad, #ff9e00);
+    background-size: 600% 100%;
+    animation: rainbowShift 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    padding: 0.7rem 1rem;
+    box-shadow: 0 0 20px #00ffd8cc;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+  }
+  #socials-bar a {
+    color: #111;
+    text-shadow:
+      0 0 6px #fff,
+      0 0 12px #fff;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+  #socials-bar a:hover {
+    color: #fff;
+    text-shadow:
+      0 0 20px #ff00cc,
+      0 0 30px #00ffff;
+    transform: scale(1.1);
+  }
+  @keyframes rainbowShift {
+    0%,100% {background-position: 0% 0%;}
+    50% {background-position: 100% 0%;}
+  }
+
+  /* Main container */
+  main {
+    z-index: 10;
+    max-width: 1100px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    user-select: none;
+  }
+  header h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 4.2rem;
+    color: #ff4c00;
+    text-shadow:
+      0 0 12px #ff4c00,
+      0 0 25px #ff7f00,
+      0 0 40px #ffaa00,
+      0 0 70px #ffcc00;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  header p {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #a9f0ff;
+    max-width: 720px;
+    margin: 0 auto;
+    text-shadow: 0 0 6px #0ff3ffaa;
+  }
+
+  /* Section styling */
+  section {
+    background: linear-gradient(135deg, rgba(10,10,15,0.8), rgba(30,0,40,0.95));
+    border-radius: 14px;
+    box-shadow:
+      0 0 15px #ff4c00cc,
+      inset 0 0 30px #ff720066;
+    margin-bottom: 3.5rem;
+    padding: 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+  section:hover {
+    box-shadow:
+      0 0 25px #00ffe8cc,
+      inset 0 0 45px #00ffdeaa;
+  }
+
+  section h2 {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #1afff0;
+    text-shadow:
+      0 0 6px #1afff0,
+      0 0 20px #00c8a9;
+  }
+  section p {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: #cde9ff;
+    text-shadow: 0 0 5px #003f4daa;
+  }
+
+  /* Lists */
+  ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+  }
+  ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    color: #d4faff;
+    text-shadow: 0 0 5px #0099bbcc;
+  }
+
+  /* Glowing lines & accents */
+  .accent-line {
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, #ff4c00, #00fff3);
+    border-radius: 5px;
+    top: 15px;
+    left: 20px;
+    box-shadow: 0 0 10px #00fff3, 0 0 20px #ff4c00;
+  }
+
+  /* Animations */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 12px #ff4c00, 0 0 25px #00fff3;
     }
-    #socials-bar a {
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
+    50% {
+      box-shadow: 0 0 25px #ff7200, 0 0 50px #00ffe0;
+    }
+  }
+
+  /* Animated "PROJECT NAME" text effect */
+  .flicker {
+    animation: flickerText 3s infinite;
+  }
+  @keyframes flickerText {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
       text-shadow:
-        0 0 5px #ff0080,
-        0 0 10px #ff7f00,
-        0 0 20px #7f00ff,
-        0 0 30px #00f0ff;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-      white-space: nowrap;
+        0 0 12px #ff4c00,
+        0 0 30px #ff7f00,
+        0 0 45px #ffaa00,
+        0 0 70px #ffaa00;
     }
-    #socials-bar a:hover {
-      color: #000;
+    20%, 22%, 24%, 55% {
+      opacity: 0.5;
       text-shadow: none;
-      background: #fff;
-      padding: 0 0.3rem;
-      border-radius: 4px;
     }
+  }
 
-    @keyframes neonGradient {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-    }
+  /* Animated gradient text for project headers */
+  .gradient-text {
+    background: linear-gradient(90deg, #ff4c00, #00ffe0, #ff0080, #00f0ff);
+    background-size: 400% 100%;
+    animation: gradientShift 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 
-    /* --- HEADER --- */
-    header {
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      background: radial-gradient(circle at center, #ff007f 10%, transparent 80%), #190022;
-      color: #fff;
-      user-select: none;
-      position: relative;
-      overflow: hidden;
-    }
+  /* Links in text */
+  a {
+    color: #00fff3;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #ff6a00;
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
     header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.8rem;
-      letter-spacing: 0.15em;
-      color: #ff00d4;
-      text-shadow:
-        0 0 12px #ff00d4,
-        0 0 25px #ff00d4,
-        0 0 40px #ff7fff;
-      margin-bottom: 0.8rem;
+      font-size: 2.8rem;
     }
-    header p {
-      max-width: 700px;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      font-weight: 300;
-      text-shadow: 0 0 8px #ff007faa;
-      margin: 0 auto;
-    }
-
-    /* Subtle glitch flicker */
-    @keyframes glitch {
-      0%, 100% {
-        text-shadow:
-          2px 0 red,
-          -2px 0 cyan;
-      }
-      50% {
-        text-shadow:
-          -2px 0 red,
-          2px 0 cyan;
-      }
-    }
-    header h1.glitch {
-      animation: glitch 1.2s infinite;
-    }
-
-    /* --- MAIN CONTAINER --- */
-    main {
-      max-width: 900px;
-      margin: 3rem auto 6rem;
-      padding: 0 1.2rem;
-      font-size: 1.1rem;
-      line-height: 1.55;
-      color: #eee;
-      user-select: text;
-    }
-
-    /* Sections with gradient headers */
-    section {
-      margin-bottom: 4rem;
-      background: linear-gradient(135deg, #22002c 0%, #000008 100%);
-      border-radius: 12px;
-      padding: 2rem 2.4rem;
-      box-shadow:
-        0 0 25px #ff00d4aa,
-        inset 0 0 18px #ff00d4bb;
-    }
-
     section h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: #ff66cc;
-      text-shadow:
-        0 0 15px #ff66cc,
-        0 0 30px #ff00d4;
-      border-bottom: 2px solid #ff00d4;
-      padding-bottom: 0.3rem;
-      user-select: none;
+      font-size: 1.8rem;
     }
-    section p {
-      margin-bottom: 1rem;
-      font-weight: 300;
-      color: #ddd;
+    section {
+      padding: 1.5rem 1.8rem;
     }
+  }
 
-    section ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    section ul li {
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #ff0080, #ff7f00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 600;
-      font-size: 1.15rem;
-      cursor: default;
-      user-select: none;
-    }
-    section ul li strong {
-      color: #fff;
-      -webkit-text-fill-color: initial;
-      background: none;
-    }
+  /* Footer with socials repeated */
+  footer {
+    text-align: center;
+    padding: 1.6rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    user-select: none;
+  }
+  footer a {
+    color: #00fff3;
+    font-weight: 600;
+    margin: 0 0.4rem;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: #ff6a00;
+    text-decoration: underline;
+  }
 
-    /* Support section link */
-    section.support a {
-      font-weight: 700;
-      color: #ff66cc;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.25s ease;
-    }
-    section.support a:hover {
-      border-color: #ff00d4;
-      text-shadow: 0 0 12px #ff00d4;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 1rem 1rem 2rem;
-      font-size: 0.9rem;
-      color: #777;
-      background: #110014;
-      user-select: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.8rem;
-      }
-      main {
-        font-size: 1rem;
-      }
-      #socials-bar {
-        flex-wrap: wrap;
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+  /* Animated tech floating orbs */
+  .orb-container {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 80px; height: 80px;
+    pointer-events: none;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px #00fff3cc);
+    animation: orbFloat 6s ease-in-out infinite;
+  }
+  .orb1 {
+    width: 25px; height: 25px;
+    background: #ff007f;
+    top: 0; left: 0;
+    animation-delay: 0s;
+  }
+  .orb2 {
+    width: 40px; height: 40px;
+    background: #00fff3;
+    top: 30px; left: 30px;
+    animation-delay: 3s;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(10px) translateX(10px); }
+  }
+</style>
 </head>
 <body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
 
-  <nav id="socials-bar" aria-label="Social media links">
-    <a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener noreferrer" aria-label="Discord Server">Discord</a>
-    <a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener noreferrer" aria-label="Character AI profile">C.AI</a>
-    <a href="https://github.com/Saeliyos" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
-    <a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener noreferrer" aria-label="Chub AI profile">Chub.AI</a>
-    <a href="https://saucepan.ai/u/" target="_blank" rel="noopener noreferrer" aria-label="Saucepan AI profile">Saucepan.ai</a>
+  <nav id="socials-bar" aria-label="Social Media Links">
+    <a href="https://saeliyos.github.io/" target="_blank" rel="noopener noreferrer" title="Main webpage">Main Site</a>
+    <a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener noreferrer" title="Discord Server">Discord</a>
+    <a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener noreferrer" title="C.AI Character">C.AI</a>
+    <a href="https://github.com/Saeliyos" target="_blank" rel="noopener noreferrer" title="GitHub Profile">GitHub</a>
+    <a href="https://huggingface.co/Saeliyos" target="_blank" rel="noopener noreferrer" title="Hugging Face Profile">Hugging Face</a>
+    <a href="https://x.com/saeliyos" target="_blank" rel="noopener noreferrer" title="Twitter">Twitter</a>
+    <a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener noreferrer" title="Chub.AI">Chub.AI</a>
+    <a href="https://saucepan.ai/u/saeliyos" target="_blank" rel="noopener noreferrer" title="Saucepan.ai">Saucepan.ai</a>
+    <a href="https://ko-fi.com/saeliyos" target="_blank" rel="noopener noreferrer" title="Ko-fi">Ko-fi</a>
+    <a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0" target="_blank" rel="noopener noreferrer" title="Reddit">Reddit</a>
   </nav>
 
-  <header role="banner">
-    <h1 class="glitch" aria-label="Project Saeliyos">Saeliyos</h1>
-    <p>Exploring AI autonomy, cognition, and synthetic decision-making through hands-on experimentation and system design.</p>
-  </header>
+  <main>
+    <header>
+      <h1 class="flicker">Saeliyos</h1>
+      <p class="gradient-text">AI Autonomy. The Future of Intelligence. The Next Frontier.</p>
+    </header>
 
-  <main role="main" aria-labelledby="about-title">
+    <section>
+      <h2>About Me</h2>
+      <p>Creating autonomous AI tools, exploring new frontiers in intelligence and digital creativity. I craft, build, and push boundaries in the AI space.</p>
+    </section>
 
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p><strong>What This Is</strong></p>
-      <p>This is an independent AI research initiative focused on one goal:<br><em>Building systems that think, observe, reflect, and choose.</em><br>Not just output text—choose.</p>
-      <p>I’m developing frameworks for synthetic cognition and decision-making. I experiment with adaptive behavior, layered reasoning, and persistent identity—
+    <section>
+      <h2>Socials & Links</h2>
+      <ul>
+        <li><a href="https://saeliyos.github.io/" target="_blank" rel="noopener noreferrer">Main Webpage (under construction)</a></li>
+        <li><a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+        <li><a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener noreferrer">C.AI Character</a></li>
+        <li><a href="https://github.com/Saeliyos" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://huggingface.co/Saeliyos" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+        <li><a href="https://x.com/saeliyos" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        <li><a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener noreferrer">Chub.AI</a></li>
+        <li><a href="https://saucepan.ai/u/saeliyos" target="_blank" rel="noopener noreferrer">Saucepan.ai</a></li>
+        <li><a href="https://ko-fi.com/saeliyos" target="_blank" rel="noopener noreferrer">Ko-fi</a></li>
+        <li><a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0" target="_blank" rel="noopener noreferrer">Reddit</a></li>
+        <li><a href="https://janitorai.com/profiles/1fd0dbd5-418c-42cd-9191-4808cbc3169a_profile-of-saeliyos" target="_blank" rel="noopener noreferrer">@Saeliyos (J.AI main)</a></li>
+        <li><a href="https://janitorai.com/profiles/51fbdd7e-3bd5-48b7-9fe4-2af170b38b4d_profile-of-6-ael" target="_blank" rel="noopener noreferrer">@6AEL (J.AI alt)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Saeliyos — Made with code, coffee, and stubbornness.
+  </footer>
+
+  <div class="orb-container" aria-hidden="true">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+</body>
+</html>
