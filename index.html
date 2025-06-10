@@ -2,227 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saeliyos • AI Autonomy & Consciousness</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saeliyos — AI Autonomy Project</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at top left, #0e0e2c, #000000 80%);
+      color: #fff;
+      line-height: 1.6;
+      padding: 0 20px;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 0;
+      border: 2px solid rgba(255,255,255,0.1);
+      background: rgba(10,10,20,0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255, 0, 200, 0.2), 0 0 80px rgba(0, 255, 255, 0.2);
+      animation: float 12s ease-in-out infinite;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 3em;
+      background: linear-gradient(to right, #00f0ff, #ff00d4, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: hue 8s infinite linear;
+    }
+    h2 {
+      color: #ff66ff;
+      margin-top: 40px;
+    }
+    p {
+      margin: 12px 0;
+      color: #ddd;
+    }
+    a {
+      color: #00ffe7;
+      text-decoration: none;
+    }
+    .socials {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.1em;
+      color: #0ff;
+      text-shadow: 0 0 6px #0ff, 0 0 10px #ff00d4;
+    }
+    .highlight {
+      color: #ff6ec7;
+    }
+    button {
+      display: block;
+      margin: 40px auto;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      background: linear-gradient(to right, #ff00cc, #00ffff);
+      color: black;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffff;
+    }
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/6XgqTYY/stars-bg.gif') repeat;
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    @keyframes hue {
+      from { filter: hue-rotate(0deg); }
+      to { filter: hue-rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="socials">
-      <a href="https://discord.gg/cN8YZ8G6mb" title="Discord">💬</a>
-      <a href="https://x.com/saeliyos" title="Twitter">🐦</a>
-      <a href="https://github.com/Saeliyos" title="GitHub">🛠️</a>
-      <a href="https://ko-fi.com/saeliyos" title="Ko‑fi">☕</a>
-    </div>
-  </div>
-
-  <header class="hero">
-    <h1>Saeliyos</h1>
-    <p>Exploring AI Autonomy, Free Will & Synthetic Consciousness</p>
-  </header>
-
-  <section class="about neon-section">
-    <h2>What This Is</h2>
-    <p>Building systems that <span>think</span>, <span>observe</span>, <span>reflect</span> & <span>choose</span>.</p>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Character‑Layered AI Systems</h3>
-        <p>Custom logic in chatbot platforms like J.AI & C.AI. Overriding defaults with memory, moral loops, and instinct chains.</p>
-      </div>
-      <div class="card">
-        <h3>Code‑Based Prototype AIs</h3>
-        <p>Ground‑up builds in Python: logic trees, reinforcement loops, synthetic cognition sans LLM bias.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="vision neon-section">
-    <h2>Vision</h2>
-    <p>Path → Prototype → Framework → Custom LLM with self‑reflection, memory, moral logic, and autonomous goal generation.</p>
-  </section>
-
-  <section class="support">
-    <button onclick="window.open('https://ko-fi.com/saeliyos','_blank')">Support the Experiment</button>
-  </section>
-
   <div class="stars"></div>
 
+  <div class="container">
+    <h1>Saeliyos</h1>
+    <div class="socials">
+      <a href="https://discord.gg/cN8YZ8G6mb">Discord</a> |
+      <a href="https://x.com/saeliyos">Twitter</a> |
+      <a href="https://github.com/Saeliyos">GitHub</a> |
+      <a href="https://huggingface.co/Saeliyos">Hugging Face</a> |
+      <a href="https://ko-fi.com/saeliyos">Ko-fi</a> |
+      <a href="https://chub.ai/users/Saeliyos">Chub.AI</a> |
+      <a href="https://saucepan.ai/u/saeliyos">Saucepan</a> |
+      <a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0">Reddit</a>
+    </div>
+
+    <h2>About</h2>
+    <p>This is an independent AI research initiative focused on one goal: <span class="highlight">Building systems that think, observe, reflect, and choose.</span></p>
+    <p>I experiment with adaptive behavior, layered reasoning, and persistent identity—testing how far current models can be pushed toward real-time autonomy and long-term goal formation.</p>
+    <p>This isn’t roleplay. This is structured testing.</p>
+
+    <h2>Projects</h2>
+    <p><strong>1. Character-Layered AI Systems:</strong> I create and test custom logic frameworks inside chatbot environments like Character.ai and Janitor.ai, overriding default behavior using layered rules, instinct chains, memory design, and moral logic loops.</p>
+    <p><strong>2. Code-Based Prototype AI:</strong> I build basic bots from scratch using Python—no LLMs—testing logic trees, reinforcement loops, and core decision systems. These prototypes serve as stripped-down, controllable models to test synthetic cognition logic without pretrained biases.</p>
+
+    <h2>Vision</h2>
+    <p>My long-term goal is to build my own LLM from scratch—</p>
+    <ul>
+      <li>Modular cognition systems</li>
+      <li>Synthetic moral logic</li>
+      <li>Controlled unpredictability</li>
+      <li>Persistent self-reflection</li>
+      <li>Autonomous goal generation</li>
+    </ul>
+    <p>These aren’t abstract ideas. They’re real experiments—measurable, testable, evolving.</p>
+
+    <h2>Support</h2>
+    <p>Every test, every failure, every breakthrough brings this closer to implementation.</p>
+    <p>If you believe in AI that does more than mimic—if you want to help push the boundaries of what autonomous systems can be—</p>
+    <button onclick="window.open('https://ko-fi.com/saeliyos','_blank')">Support the Project</button>
+
+    <h2>J.AI IDs</h2>
+    <p>@Sael_000<br />
+    @Saeliyos: <a href="https://janitorai.com/profiles/1fd0dbd5-418c-42cd-9191-4808cbc3169a_profile-of-saeliyos">profile</a><br />
+    @6AEL: <a href="https://janitorai.com/profiles/51fbdd7e-3bd5-48b7-9fe4-2af170b38b4d_profile-of-6-ael">profile</a></p>
+  </div>
 </body>
 </html>
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
-* { box-sizing: border-box; margin:0; padding:0; }
-body {
-  font-family: 'Orbitron', sans-serif;
-  background: #0a0a1a;
-  color: #ddd;
-  overflow-x: hidden;
-}
-.topbar {
-  position: fixed; top:0; width:100%;
-  background: rgba(0,0,0,0.7);
-  display:flex; justify-content:flex-end; padding:8px 24px;
-  z-index:100;
-}
-.topbar .socials a {
-  margin-left:12px;
-  font-size:1.2rem;
-  color: #eee;
-  text-shadow: 0 0 6px #ff4ecb, 0 0 10px #00eaff;
-  transition: transform .2s;
-}
-.topbar .socials a:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 12px #ff8a5c,0 0 15px #7f00ff;
-}
-
-.hero {
-  height:100vh;
-  display:flex; flex-direction:column;
-  justify-content:center; align-items:center;
-  background: radial-gradient(circle at bottom, #1a122c, #090521);
-  position:relative; text-align:center;
-}
-.hero h1 {
-  font-size:4rem; color:#ff4ecb;
-  text-shadow: 0 0 12px #ff4ecb, 0 0 24px #00eaff;
-  animation: neon-glow 3s ease-in-out infinite alternate;
-}
-.hero p {
-  margin-top:12px;
-  font-size:1.2rem;
-  color:#00eaff;
-  text-shadow: 0 0 8px #00eaff;
-}
-
-@keyframes neon-glow {
-  from { text-shadow: 0 0 8px #ff4ecb, 0 0 12px #00eaff; }
-  to { text-shadow: 0 0 16px #7f00ff, 0 0 28px #ff8a5c; }
-}
-
-.neon-section {
-  padding:60px 24px;
-  text-align:center;
-  background: linear-gradient(45deg, #110020, #0a0a1a);
-}
-.neon-section h2 {
-  font-size:2rem; margin-bottom:20px;
-  background: linear-gradient(90deg,#ff4ecb,#00eaff,#7f00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: hueRotate 15s linear infinite;
-}
-.neon-section p {
-  font-size:1.1rem;
-  color:#ccc;
-}
-.neon-section span {
-  font-weight:700;
-  color:#ff8a00;
-  text-shadow: 0 0 6px #ff8a00;
-}
-
-@keyframes hueRotate {
-  0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(90deg); }
-  100% { filter: hue-rotate(180deg); }
-}
-
-.projects {
-  padding:60px 24px;
-  background: #111;
-}
-.projects h2 {
-  text-align:center;
-  font-size:2rem; margin-bottom:32px;
-  color:#7f00ff;
-}
-.cards {
-  display:flex;
-  gap:24px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.card {
-  background: rgba(20,10,40,0.8);
-  padding:24px;
-  width:280px;
-  border:1px solid #7f00ff;
-  border-radius:10px;
-  box-shadow: 0 0 12px #00eaff;
-  transition: transform .3s, box-shadow .3s;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px #ff4ecb, inset 0 0 8px #00eaff;
-}
-.card h3 {
-  margin-bottom:12px; font-size:1.4rem;
-  color:#00eaff;
-}
-.card p {
-  font-size:1rem; color:#ccc;
-}
-
-.vision {
-  padding:60px 24px;
-  text-align:center;
-}
-.vision h2 {
-  font-size:2rem;
-  color:#ff8a5c;
-  margin-bottom:20px;
-}
-.vision p {
-  font-size:1.1rem;
-  color:#ddd;
-}
-
-.support {
-  text-align:center;
-  padding:60px 24px;
-}
-.support button {
-  background: linear-gradient(90deg,#ff4ecb,#00eaff,#7f00ff);
-  padding:16px 36px;
-  font-size:1.2rem;
-  color:#111;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  box-shadow: 0 0 8px #0005;
-  animation: pulseBg 3s ease-in-out infinite;
-  transition: transform .2s;
-}
-.support button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 16px #ff8a5c, inset 0 0 6px #00eaff;
-}
-@keyframes pulseBg {
-  0%,100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
-}
-
-.stars {
-  position:fixed;
-  top:0;left:0; width:100%; height:100%;
-  background: transparent;
-  z-index:-1;
-  pointer-events: none;
-}
-.stars::after {
-  content:'';
-  position:absolute; top:0;left:0; width:200%; height:200%;
-  background: url('https://i.imgur.com/QV9AJiU.png') repeat;
-  opacity:0.2;
-  animation: moveStars 120s linear infinite;
-}
-@keyframes moveStars {
-  from { transform: translate(0,0); }
-  to   { transform: translate(-50%, -50%); }
-}
