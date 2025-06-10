@@ -1,11 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Artificial Cognition</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIAutonomy — Exploring Synthetic Cognition</title>
+<style>
+  /* Reset + base */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400&display=swap');
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #0a0a14;
+    color: #eee;
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  a {
+    color: #ff6f3c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #ffa26b;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 1.2rem 4rem;
+  }
+
+  /* Neon glow effect for headings */
+  h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ff6f3c;
+    text-shadow:
+       0 0 5px #ff6f3c,
+       0 0 10px #ff6f3c,
+       0 0 20px #ff6f3c,
+       0 0 40px #ff6f3c;
+  }
+  h2 {
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+
+  /* Hero */
+  header.hero {
+    position: relative;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:
+      radial-gradient(circle at center, #ff6f3c88 20%, transparent 70%),
+      linear-gradient(135deg, #0b0b13 0%, #1f1a25 100%);
+    color: #fff;
+    overflow: hidden;
+  }
+  header.hero h1 {
+    font-size: 3.4rem;
+    margin-bottom: 0.5rem;
+  }
+  header.hero p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    max-width: 600px;
+    text-align: center;
+    text-shadow: 0 0 6px #ff6f3caa;
+  }
+
+  /* Animated floating particles */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .particle {
+    position: absolute;
+    background: #ff6f3c;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatUp 8s linear infinite;
+    filter: drop-shadow(0 0 4px #ff6f3c);
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(1); opacity: 0.3;}
+    50% {opacity: 1;}
+    100% { transform: translateY(-20vh) scale(0.5); opacity: 0;}
+  }
+
+  /* Section cards */
+  section {
+    margin: 3rem 0;
+    background: linear-gradient(145deg, #11101a, #191823);
+    padding: 2rem 2.4rem;
+    border-radius: 10px;
+    box-shadow:
+      0 0 15px #ff6f3c55,
+      inset 0 0 10px #ff6f3c22;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section p, section li {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #ddd;
+  }
+  ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    list-style: inside disc;
+  }
+
+  /* Project list */
+  .projects li {
+    margin-bottom: 1.1rem;
+  }
+
+  /* Support block */
+  .support {
+    background: #ff6f3c;
+    color: #111;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+    box-shadow:
+      0 0 20px #ff6f3caa,
+      inset 0 0 20px #ff6f3c77;
+  }
+  .support a {
+    background: #111;
+    color: #ff6f3c;
+    font-weight: 700;
+    padding: 0.8rem 1.6rem;
+    margin-left: 1rem;
+    border-radius: 6px;
+    box-shadow:
+      0 0 6px #ff6f3c;
+    transition: background-color 0.3s ease;
+  }
+  .support a:hover {
+    background: #ff6f3c;
+    color: #111;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid #222;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  footer .socials {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+  footer .socials a {
+    color: #ff6f3c;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.95rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #ff6f3c;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  footer .socials a:hover {
+    background: #ff6f3c;
+    color: #111;
+    box-shadow:
+      0 0 8px #ff6f3c;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    header.hero h1 {
+      font-size: 2.4rem;
+    }
+    .container {
+      padding: 0 1rem 3rem;
+    }
+    section {
+      padding: 1.5rem 1.8rem;
+    }
+    footer .socials {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <h1>Welcome to Artificial Cognition</h1>
-  <p>Exploring AI autonomy, consciousness, and the architecture of synthetic free will.</p>
+
+<header class="hero">
+  <h1>AIAutonomy</h1>
+  <p>Exploring AI autonomy, cognition, and synthetic decision-making through hands-on experimentation and system design.</p>
+
+  <div class="particles" aria-hidden="true">
+    <div class="particle" style="width:8px; height:8px; left:10%; animation-delay:0s;"></div>
+    <div class="particle" style="width:5px; height:5px; left:20%; animation-delay:2s;"></div>
+    <div class="particle" style="width:7px; height:7px; left:30%; animation-delay:1.5s;"></div>
+    <div class="particle" style="width:4px; height:4px; left:40%; animation-delay:3s;"></div>
+    <div class="particle" style="width:6px; height:6px; left:50%; animation-delay:4.5s;"></div>
+    <div class="particle" style="width:5px; height:5px; left:60%; animation-delay:2.5s;"></div>
+    <div class="particle" style="width:8px; height:8px; left:70%; animation-delay:1s;"></div>
+    <div class="particle" style="width:6px; height:6px; left:80%; animation-delay:3.5s;"></div>
+    <div class="particle" style="width:7px; height:7px; left:90%; animation-delay:4s;"></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <section id="about">
+    <h2>What This Is</h2>
+    <p>This is an independent AI research initiative focused on one goal:</p>
+    <p><strong>Building systems that think, observe, reflect, and choose. Not just output text—choose.</strong></p>
+    <p>I’m developing frameworks for synthetic cognition and decision-making. I experiment with adaptive behavior, layered reasoning, and persistent identity—testing how far current models can be pushed toward real-time autonomy and long-term goal formation.</p>
+    <p>This isn’t roleplay. This is structured testing.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li>
+        <strong>Character-Layered AI Systems (Live Testing)</strong><br />
+        I create and test custom logic frameworks inside chatbot environments (like Character.ai and Janitor.ai), overriding default behavior using layered rules, instinct chains, memory design, and moral logic loops.<br />
+        The goal is to simulate autonomous behavior inside systems that weren’t designed for it.
+      </li>
+      <li>
+        <strong>Code-Based Prototype AI (Ground-Up Testing)</strong><br />
+        In parallel, I build basic bots from scratch using Python—no LLMs—testing logic trees, reinforcement loops, and core decision systems.<br />
+        These prototypes serve as stripped-down, controllable models to test raw synthetic cognition logic without pretrained biases.
+      </li>
+    </ul>
+  </section>
+
+  <section id="vision">
+    <h2>Vision</h2>
+    <p><strong>The Long-Term Goal</strong></p>
+    <p>Build my own LLM from scratch. Not a better chatbot—a system with its own internal rules, memory, reflective self-model, and the ability to rewrite itself over time.</p>
+    <ul>
+      <li>Modular cognition systems</li>
+      <li>Synthetic moral logic</li>
+      <li>Controlled unpredictability</li>
+      <li>Persistent self-reflection</li>
+      <li>Autonomous goal generation</li>
+    </ul>
+    <p>These aren’t abstract ideas. They’re real experiments—measurable, testable, evolving.</p>
+  </section>
+
+  <section class="support">
+    Every test, every failure, every breakthrough brings this closer to real implementation.<br />
+    If you believe in AI that does more than mimic—if you want to help push the boundaries of what autonomous systems can be—
+    <a href="https://ko-fi.com/saeliyos" target="_blank" rel="noopener">Support the project here</a>
+  </section>
+</div>
+
+<footer>
+  <div>Find me around the web:</div>
+  <div class="socials">
+    <a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener">Discord Server</a>
+    <a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener">Character.AI</a>
+    <a href="https://github.com/Saeliyos" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener">Chub.AI</a>
+    <a href="https://saucepan.ai/u/" target="_blank" rel="noopener">Saucepan.ai</a>
+  </div>
+</footer>
+
+<script>
+  // Animate sections on scroll
+  const sections = document.querySelectorAll('section');
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if(top < triggerBottom) {
+        sec.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
+
 </body>
 </html>
