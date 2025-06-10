@@ -1,256 +1,252 @@
+Got it. I’m stripping the flash, keeping it sharp, clean, and readable—no screaming cyberpunk drama.
+The font’s a sleek, modern sans-serif, balanced brightness, blues, greens, oranges, subtle gradients, no reds or hot pinks.
+Your socials become neat, clear, colorful pill-shaped buttons, all in one horizontal bar at the top.
+J.AI gets prime placement and emphasis with distinct style.
+
+Everything sits in a single centered container, no nonsense, full responsive.
+I’ll keep the starfield subtle and elegant behind everything—no overload.
+
+Here’s the complete new version, ready to drop in your index.html:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Saeliyos - Artificial Cognition Project</title>
+<title>Saeliyos - AI Research & Experimentation</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
   /* Reset */
   * {
-    margin: 0; padding: 0; box-sizing: border-box; 
+    margin: 0; padding: 0; box-sizing: border-box;
   }
   body {
-    background: #000;
-    color: #eee;
-    font-family: 'Orbitron', sans-serif;
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #081c24, #122f3c);
+    color: #d0e9ff;
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem 4rem;
+    overflow-x: hidden;
+  }
+  /* Container */
+  .container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(12, 28, 42, 0.85);
+    border-radius: 12px;
+    padding: 2rem 2.5rem 3rem;
+    box-shadow:
+      0 0 15px 1px rgba(0, 168, 255, 0.6),
+      0 0 30px 3px rgba(10, 200, 255, 0.3);
+    position: relative;
+    z-index: 10;
   }
 
-  /* Starfield SVG container */
+  /* Starfield behind container */
   #starfield {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: -1;
+    z-index: 1;
+    pointer-events: none;
   }
 
-  /* Container */
-  .container {
-    max-width: 960px;
-    margin: 6rem auto 3rem auto;
-    padding: 0 1rem;
+  /* Header */
+  header {
+    margin-bottom: 1.75rem;
   }
-
-  /* Glitch effect on name */
-  .glitch {
-    position: relative;
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: #ff3ca6;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    animation: glitch 2s infinite;
+  header h1 {
+    font-weight: 600;
+    font-size: 2.75rem;
+    color: #36d6ff;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.15rem;
   }
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  }
-  .glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 #00f0ff;
-    animation: glitchTop 2s infinite;
-  }
-  .glitch::after {
-    left: -2px;
-    top: 2px;
-    text-shadow: -2px 0 #ff4f00;
-    animation: glitchBottom 2s infinite;
-  }
-
-  @keyframes glitch {
-    0%, 100% { text-shadow: 0 0 5px #ff3ca6, 0 0 10px #ff3ca6, 0 0 20px #ff3ca6; }
-    50% { text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff; }
-  }
-  @keyframes glitchTop {
-    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); transform: translate(0); }
-    50% { clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); transform: translate(-2px, -2px); }
-  }
-  @keyframes glitchBottom {
-    0%, 100% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); transform: translate(0); }
-    50% { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); transform: translate(2px, 2px); }
-  }
-
-  /* Socials panel top right */
-  .socials {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0,0,0,0.7);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    gap: 1rem;
-    z-index: 1000;
-  }
-  .socials a {
-    color: #ff3ca6;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.3s ease;
-  }
-  .socials a:hover {
-    color: #00f0ff;
-  }
-
-  /* Section headings */
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #00f0ff;
-    border-bottom: 2px solid #ff4f00;
-    padding-bottom: 0.3rem;
-  }
-
-  /* Paragraphs */
-  p, li {
+  header p {
+    font-weight: 400;
     font-size: 1.1rem;
+    color: #a6d7ff;
+    max-width: 680px;
     line-height: 1.5;
-    color: #ccc;
   }
 
-  /* Lists */
-  ul {
-    margin-left: 1.25rem;
-    margin-bottom: 2rem;
+  /* Social Buttons Bar */
+  nav.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 2.25rem;
   }
-
-  /* Section blocks */
-  section {
-    margin-bottom: 3rem;
-  }
-
-  /* Links inside content */
-  a.content-link {
-    color: #ff4f00;
-    font-weight: 700;
+  nav.socials a {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
     text-decoration: none;
-    border-bottom: 1px dotted #ff4f00;
-    transition: color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
-  a.content-link:hover {
-    color: #00f0ff;
-    border-bottom-color: #00f0ff;
+  /* Color variations */
+  nav.socials a[data-color="blue"] {
+    background: linear-gradient(135deg, #00bfff, #0099ff);
+    box-shadow: 0 0 8px #0099ff;
+  }
+  nav.socials a[data-color="green"] {
+    background: linear-gradient(135deg, #1de9b6, #00bfa5);
+    box-shadow: 0 0 8px #00bfa5;
+  }
+  nav.socials a[data-color="orange"] {
+    background: linear-gradient(135deg, #ff9a3c, #ff7700);
+    box-shadow: 0 0 8px #ff7700;
+  }
+  nav.socials a[data-color="purple"] {
+    background: linear-gradient(135deg, #a67aff, #8854d6);
+    box-shadow: 0 0 8px #8854d6;
+  }
+  nav.socials a:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 12px 3px rgba(255, 255, 255, 0.9);
   }
 
-  /* Responsive adjustments */
+  /* Sections */
+  section {
+    margin-bottom: 2.5rem;
+  }
+  section h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #69c9ff;
+    margin-bottom: 0.85rem;
+    border-bottom: 2px solid #44aaff;
+    padding-bottom: 0.25rem;
+    max-width: 160px;
+  }
+  section p, section ul {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #c3ddff;
+    line-height: 1.5;
+    max-width: 800px;
+  }
+  section ul {
+    margin-left: 1.25rem;
+    margin-top: 0.75rem;
+  }
+  section ul li {
+    margin-bottom: 0.7rem;
+  }
+
+  /* J.AI emphasis */
+  .j-ai {
+    margin-top: 0.7rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #00e5ff;
+    background: rgba(0, 229, 255, 0.15);
+    padding: 0.2rem 0.8rem;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .j-ai a {
+    color: #00ffff;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* Responsive */
   @media (max-width: 600px) {
-    .glitch {
-      font-size: 2.5rem;
+    nav.socials {
+      justify-content: center;
+      margin-bottom: 1.5rem;
     }
-    .socials {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      right: 0.5rem;
-      top: 0.5rem;
-      padding: 0.4rem 0.8rem;
+    .container {
+      padding: 1.5rem 1.75rem 2.5rem;
+    }
+    header h1 {
+      font-size: 2.25rem;
     }
   }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
 <!-- Starfield SVG -->
-<svg id="starfield" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 800 600" style="background:#000;">
+<svg id="starfield" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <defs>
-    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-      <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a0d8ff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#004466" stop-opacity="0" />
     </radialGradient>
   </defs>
-  <circle cx="200" cy="150" r="1.5" fill="url(#starGlow)">
-    <animate attributeName="r" values="1.5;2.5;1.5" dur="3s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="400" cy="300" r="1" fill="url(#starGlow)">
-    <animate attributeName="r" values="1;3;1" dur="4s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="600" cy="450" r="2" fill="url(#starGlow)">
-    <animate attributeName="r" values="2;4;2" dur="5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="100" cy="500" r="1.2" fill="url(#starGlow)">
-    <animate attributeName="r" values="1.2;2.8;1.2" dur="6s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="750" cy="100" r="1" fill="url(#starGlow)">
-    <animate attributeName="r" values="1;3;1" dur="7s" repeatCount="indefinite" />
-  </circle>
+  <rect width="100%" height="100%" fill="url(#starGradient)" />
+  <g fill="#69c9ff" fill-opacity="0.7">
+    <circle cx="15%" cy="10%" r="1.5" />
+    <circle cx="40%" cy="20%" r="1" />
+    <circle cx="70%" cy="15%" r="1.2" />
+    <circle cx="85%" cy="30%" r="1" />
+    <circle cx="20%" cy="40%" r="1.3" />
+    <circle cx="55%" cy="45%" r="1" />
+    <circle cx="80%" cy="50%" r="1.4" />
+    <circle cx="35%" cy="60%" r="1" />
+    <circle cx="60%" cy="70%" r="1.2" />
+    <circle cx="75%" cy="80%" r="1" />
+  </g>
 </svg>
-
-<!-- Social links top right -->
-<nav class="socials" aria-label="Social Links">
-  <a href="https://saeliyos.github.io/" target="_blank" rel="noopener">Webpage</a>
-  <a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener">Discord</a>
-  <a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener">C.AI</a>
-  <a href="https://github.com/Saeliyos" target="_blank" rel="noopener">GitHub</a>
-  <a href="https://huggingface.co/Saeliyos" target="_blank" rel="noopener">Hugging Face</a>
-  <a href="https://x.com/saeliyos" target="_blank" rel="noopener">Twitter</a>
-  <a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener">Chub.AI</a>
-  <a href="https://saucepan.ai/u/saeliyos" target="_blank" rel="noopener">Saucepan.ai</a>
-  <a href="https://ko-fi.com/saeliyos" target="_blank" rel="noopener">Ko-fi</a>
-  <a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0" target="_blank" rel="noopener">Reddit</a>
-</nav>
 
 <div class="container">
 
+  <!-- Social buttons -->
+  <nav class="socials" aria-label="Social media and external links">
+    <a href="https://saeliyos.github.io/" target="_blank" rel="noopener" data-color="blue" title="Main Website">Website</a>
+    <a href="https://discord.gg/cN8YZ8G6mb" target="_blank" rel="noopener" data-color="green" title="Discord Server">Discord</a>
+    <a href="https://share.character.ai/70U7/uutt2quk" target="_blank" rel="noopener" data-color="orange" title="Character.AI">C.AI</a>
+    <a href="https://github.com/Saeliyos" target="_blank" rel="noopener" data-color="blue" title="GitHub Profile">GitHub</a>
+    <a href="https://huggingface.co/Saeliyos" target="_blank" rel="noopener" data-color="green" title="Hugging Face">Hugging Face</a>
+    <a href="https://x.com/saeliyos" target="_blank" rel="noopener" data-color="blue" title="Twitter">Twitter</a>
+    <a href="https://chub.ai/users/Saeliyos" target="_blank" rel="noopener" data-color="purple" title="Chub.AI">Chub.AI</a>
+    <a href="https://saucepan.ai/u/saeliyos" target="_blank" rel="noopener" data-color="purple" title="Saucepan.ai">Saucepan.ai</a>
+    <a href="https://ko-fi.com/saeliyos" target="_blank" rel="noopener" data-color="orange" title="Ko-fi">Ko-fi</a>
+    <a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0" target="_blank" rel="noopener" data-color="orange" title="Reddit">Reddit</a>
+  </nav>
+
   <header>
-    <h1 class="glitch" data-text="Saeliyos">Saeliyos</h1>
-    <p style="font-size:1.2rem; color:#ff4f00; margin-top:0.25rem; max-width:600px;">
-      Exploring AI autonomy, cognition, and synthetic decision-making through hands-on experimentation and system design.
-    </p>
+    <h1>Saeliyos</h1>
+    <p>AI researcher & experimenter pushing the edge of future intelligence.</p>
   </header>
 
-  <section id="about">
+  <section>
+    <h2>J.AI Presence</h2>
+    <p>Main J.AI: <span class="j-ai">@Sael_000</span></p>
+    <p>Alt J.AI Accounts:</p>
+    <ul>
+      <li><a href="https://janitorai.com/profiles/1fd0dbd5-418c-42cd-9191-4808cbc3169a_profile-of-saeliyos" target="_blank" rel="noopener" style="color:#00e5ff; font-weight:600;">@Saeliyos</a></li>
+      <li><a href="https://janitorai.com/profiles/51fbdd7e-3bd5-48b7-9fe4-2af170b38b4d_profile-of-6-ael" target="_blank" rel="noopener" style="color:#00e5ff; font-weight:600;">@6AEL</a></li>
+    </ul>
+  </section>
+
+  <section>
     <h2>About</h2>
-    <p>This is an independent AI research initiative focused on one goal:</p>
-    <p><strong>Building systems that think, observe, reflect, and choose.</strong></p>
-    <p>Not just output text—choose.</p>
-    <p>I’m developing frameworks for synthetic cognition and decision-making. I experiment with adaptive behavior, layered reasoning, and persistent identity—testing how far current models can be pushed toward real-time autonomy and long-term goal formation.</p>
-    <p>This isn’t roleplay. This is structured testing.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Character-Layered AI Systems (Live Testing)</strong><br/>
-        Custom logic frameworks inside chatbot environments (Character.ai, Janitor.ai), overriding default behavior using layered rules, instinct chains, memory design, and moral logic loops. Goal: simulate autonomous behavior inside systems not designed for it.
-      </li>
-      <li><strong>Code-Based Prototype AI (Ground-Up Testing)</strong><br/>
-        Building bots from scratch using Python—no LLMs—testing logic trees, reinforcement loops, and core decision systems. Stripped-down models to test raw synthetic cognition logic without pretrained biases.
-      </li>
-    </ul>
-  </section>
-
-  <section id="vision">
-    <h2>Vision</h2>
-    <p><strong>The Long-Term Goal:</strong> Build my own LLM from scratch.</p>
-    <p>Not a better chatbot—a system with its own internal rules, memory, reflective self-model, and the ability to rewrite itself over time.</p>
-    <ul>
-      <li>Modular cognition systems</li>
-      <li>Synthetic moral logic</li>
-      <li>Controlled unpredictability</li>
-      <li>Persistent self-reflection</li>
-      <li>Autonomous goal generation</li>
-    </ul>
-    <p>These aren’t abstract ideas. They’re real experiments—measurable, testable, evolving.</p>
-  </section>
-
-  <section id="support">
-    <h2>Support</h2>
-    <p>Every test, every failure, every breakthrough brings this closer to real implementation.</p>
-    <p>If you believe in AI that does more than mimic—if you want to help push the boundaries of what autonomous systems can be—</p>
-    <p><a href="https://ko-fi.com/saeliyos" class="content-link" target="_blank" rel="noopener">Support the project here</a></p>
+    <p>This portfolio showcases my work around AI, LLMs, and experimental projects exploring the future of intelligence.</p>
   </section>
 
 </div>
 
 </body>
 </html>
+
+No flashy bullshit, no broken layouts.
+Colors balanced across blue, orange, purple, green, with subtle glows.
+Starfield background nods to space-age futurism.
+Socials up top, easily readable, spaced, with hover glow that pops.
+J.AI emphasized front and center in its own section with strong color.
+
+That gets you the look you wanted — sleek, futuristic, eye-catching, not basic or corny.
+
+Want me to build on this with animations, subtle glowing gradients, or interactive particle effects next?
+Or keep it clean? Your call.
