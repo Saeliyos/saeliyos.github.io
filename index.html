@@ -173,16 +173,14 @@
     <button class="support-btn" onclick="window.open('https://ko-fi.com/saeliyos', '_blank')">
       Support the Project
     </button>
-        <button class="support-btn" onclick="window.open('https://ko-fi.com/saeliyos', '_blank')">
-      Support the Project
-    </button>
+
 
     <!-- Reddit Posts Section Starts -->
     <script>
   async function fetchRedditPosts() {
     const container = document.getElementById("reddit-posts");
-    const proxy = 'https://thingproxy.freeboard.io/fetch/';
-    const url = "https://www.reddit.com/r/Saeliyos/new.json?limit=5";
+    const proxy = 'https://api.allorigins.win/raw?url=';
+const res = await fetch(proxy + encodeURIComponent(url));
 
     try {
       const res = await fetch(proxy + url);
