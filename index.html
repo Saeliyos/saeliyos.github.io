@@ -173,7 +173,48 @@
     <button class="support-btn" onclick="window.open('https://ko-fi.com/saeliyos', '_blank')">
       Support the Project
     </button>
-  </div>
+        <button class="support-btn" onclick="window.open('https://ko-fi.com/saeliyos', '_blank')">
+      Support the Project
+    </button>
 
+    <!-- ⬇️ Reddit Posts Section Starts -->
+    <h2>Latest Forum Posts</h2>
+    <div id="reddit-posts">
+      <p>Loading latest posts from <a href="https://www.reddit.com/r/Saeliyos/" target="_blank" style="color:#0ff;">r/Saeliyos</a>...</p>
+    </div>
+
+    <script>
+      async function fetchRedditPosts() {
+        const container = document.getElementById("reddit-posts");
+        try {
+          const res = await fetch("https://www.reddit.com/r/Saeliyos/new.json?limit=5");
+          const json = await res.json();
+          const posts = json.data.children;
+
+          if (!posts.length) {
+            container.innerHTML = "<p>No recent posts found.</p>";
+            return;
+          }
+
+          let html = '<ul>';
+          posts.forEach(post => {
+            const p = post.data;
+            html += `<li>
+              <a href="https://www.reddit.com${p.permalink}" target="_blank" style="color:#ff88ff;">
+                ${p.title}
+              </a> <span style="color:#888;">(${new Date(p.created_utc * 1000).toLocaleDateString()})</span>
+            </li>`;
+          });
+          html += '</ul>';
+          container.innerHTML = html;
+        } catch (err) {
+          container.innerHTML = "<p style='color:red;'>Failed to load posts. Try again later.</p>";
+        }
+      }
+      fetchRedditPosts();
+    </script>
+    <!-- ⬆️ Reddit Posts Section Ends -->
+
+  </div> <!-- .container ends -->
 </body>
 </html>
