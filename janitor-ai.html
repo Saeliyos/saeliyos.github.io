@@ -121,7 +121,7 @@
   </div>
 
   <div class="post">
-    <h2>🧠 Lorebooks Aren’t Magic: Let’s Get Real About Tokens and Context</h2>
+    <h2>🧠 Lorebooks Aren’t Magic: Let’s Get Real About Tokens and Context - Guide by Sael_000 on Janitor AI</h2>
     <div class="date">Posted: June 22, 2025</div>
     <p><div style="max-width: 700px; margin: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Helvetica Neue', sans-serif; font-size: 0.92rem; line-height: 1.6; color: #ccc;">
 
@@ -220,6 +220,89 @@
     </p>
     <div class="tags">#Lorebooks #janitorAI #Discussion</div>
   </div>
+  <div class="post">
+  <h2>🧠 Restarting a Chat Because the Bot “Forgot Its Character”: This doesn't fix the problem, it resets it. - Guide by Sael_000 on Janitor AI</h2>
+  <div class="date">Posted: June 20, 2025</div>
+  <p>  <strong>Restarting a chat is not the fix</strong> for a bot losing character in chat over time.</p>
+
+  <p>It resets the problem. It doesn’t fix it.</p>
+
+  <p>If a bot breaks character when the chat gets long, <strong>this is a design flaw in your bot.</strong></p>
+
+  <p>Your bot shouldn’t go out of character when you hit memory context. Your bot should not need a reset button.</p>
+
+  <p>If it does, you’re relying too heavily on the welcome message or initial setup. That’s not sustainable.</p>
+
+  <p>Needing to transfer chat memories or start a new chat just to keep the bot in character means the bot was never truly taught how to stay in character.</p>
+
+  <p><strong>You’re not fixing the problem—you’re just resetting it.</strong></p>
+
+  <h3 style="color:#ff88ff; margin-top: 1.5rem;">⚠️ What This Usually Means:</h3>
+  <ul style="margin-left:1.2rem;">
+    <li>The character prompt is too shallow in the bot definition. It only exists in the welcome message or short-term memory.</li>
+    <li>When the memory limit is hit and older messages are dropped, the bot loses its reference point.</li>
+    <li>If the bot can’t maintain its tone, behavior, or perspective without constant reminders, then the core instruction isn’t strong enough.</li>
+  </ul>
+
+  <h3 style="color:#00ffff; margin-top: 1.5rem;">✅ What to Do Instead:</h3>
+  <ul style="margin-left:1.2rem;">
+    <li><strong>Bake in the behavior, tone, and rules</strong> inside the personality and scenario fields. Don’t assume the bot will “remember” them—force it to carry those traits through every message.</li>
+    <li>Use <strong>clear, direct instruction</strong> inside the bot definition. The instructions must explicitly teach the AI that it <strong>is</strong> the character. For example:
+      <ul style="margin-left:1.2rem; margin-top: 0.5rem;">
+        <li>“The AI’s role is {{char}}.”</li>
+        <li>“{{char}} embodies [name of character].”</li>
+        <li>“{{char}} always stays in character.”</li>
+      </ul>
+    </li>
+    <li><strong>Don’t waste memory slots on fixed character data.</strong> Those should be reserved for evolving plot/world events. Core traits should be hardcoded into the base definition.</li>
+  </ul>
+
+  <p style="margin-top: 1.5rem;"><strong>Bottom line:</strong> If a bot breaks character when the chat gets long, <strong>this is a design flaw in the bot.</strong></p>
+
+  <p>The character should be able to re-anchor itself without needing a fresh start. If your bot collapses after a long conversation, it wasn’t strong enough to begin with.</p>
+
+  <p><strong>Build characters that stand without constant correction.</strong></p>
+
+  <hr style="margin: 2rem 0; border: none; border-top: 1px solid #444;" />
+
+  <h3 style="color:#ff88ff;">🧠 In-Depth Additional Explanation:</h3>
+
+  <p>If your bots “forget their character on JLLM after like 100 messages,” this is not a token issue.</p>
+
+  <p>This is a <strong>structure and scripting issue</strong> in your character definition.</p>
+
+  <p>Whether your bot is high or low token doesn’t matter here.</p>
+
+  <ul style="margin-left: 1.2rem;">
+    <li>If the bot is low token, it likely has an <strong>empty personality section</strong> or zero actual instructions—there’s literally nothing to read.</li>
+    <li>If the bot is high token but unreadable, it has <strong>poor structure</strong> and poor instructions—too vague, too messy, or misaligned with model parsing.</li>
+  </ul>
+
+  <p>This issue is extremely common when bots are front-loaded with a welcome message that handles all the RP setup. When that message falls out of context, the character collapses.</p>
+
+  <p><strong>If your bot forgets the roleplay or its character after a while, your writing structure isn’t being understood by the model.</strong></p>
+
+  <p>Other creators will say it’s a token problem. They’re wrong.</p>
+
+  <p>This issue happens in both high and low token builds. It is <strong>not</strong> a token limit problem.</p>
+
+  <p><strong>This is a writing problem.</strong></p>
+
+  <p>Bad instructions = weak behavior anchoring. Doesn’t matter if you used 400 tokens or 4000.</p>
+
+  <p><strong>Well-written bots can hold their identity across time. Poorly written ones can’t.</strong></p>
+
+  <h3 style="margin-top: 1.5rem;">📌 TL;DR:</h3>
+  <ul style="margin-left: 1.2rem;">
+    <li>If your bot forgets its character, you’re not giving it a strong enough identity.</li>
+    <li>Restarting a chat resets the problem, it doesn’t solve it.</li>
+    <li>This isn’t JLLM’s fault. <strong>It’s a writing issue.</strong></li>
+    <li>Proofread your structure. Strengthen your definitions.</li>
+  </ul>
+
+  <p style="margin-top: 2rem; text-align: center; font-style: italic; color: #888;">— End of Guide —</p>
+  <div class="tags">#JanitorAI #Guide #StayingInCharacter</div>
+</div>
 
   <!-- Add more .post sections below for each new update -->
   
