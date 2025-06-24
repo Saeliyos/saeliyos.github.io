@@ -1,167 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saeliyos — AI Autonomy Project</title>
-  <style>
-    /* Google Font */
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+  </p>
 
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: #000011;
-      color: #eee;
-      overflow-x: hidden;
-      min-height: 100vh;
-      position: relative;
-    }
-    ul { margin-left: 20px; }
+  <ul style="margin-top: 1.5rem; margin-bottom: 1.5rem; color: #ddd;">
+    <li><strong>Modular:</strong> A layered design enforcing hard-coded logic and autonomous cognition flows.</li>
+    <li><strong>Portable:</strong> Crafted to work across multiple LLMs, not locked to one platform.</li>
+    <li><strong>Innovative:</strong> Implements synthetic "cognition" layering — instinct, perception, logic, and response — for deep immersion.</li>
+    <li><strong>Battle-tested:</strong> Designed and optimized to push the limits of token budgets and complex AI environments like Janitor LLM.</li>
+    <li><strong>Built-to-last:</strong> This is a bespoke, structured mini-DSL — no fluff, no shortcuts — real AI engineering.</li>
+  </ul>
 
-    /* Particle (stars) background */
-    #stars, #stars2, #stars3 {
-      position: fixed; top:0; left:0;
-      width:100%; height:100%;
-      background: transparent;
-      z-index:-1;
-    }
-    #stars::after, #stars2::after, #stars3::after {
-      content:""; position:absolute; width:1px; height:1px;
-      background:transparent;
-      box-shadow: 
-        /* generate many randomized dots */
-        1000 1000 #fff, 2000 3000 #fff, 4000 2000 #fff,
-        /* multiple copies to simulate many stars */
-        /* etc, multiple shadow values omitted for brevity */
-        8000 6000 #fff;
-      animation: animStar linear infinite;
-    }
-    #stars { opacity:0.2; animation-duration:200s; }
-    #stars2 { opacity:0.15; animation-duration:100s; }
-    #stars3 { opacity:0.1; animation-duration:300s; }
-    @keyframes animStar { from { transform: translateY(0); } to { transform: translateY(-2000px); } }
+  <p style="font-size: 1rem; color: #ccc;">
+    <em>If you want to understand what serious, hands-on prompt engineering looks like from someone who actually built it — this is where you start.</em>
+  </p>
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 40px;
-      background: rgba(5,5,20,0.7);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      border: 2px solid rgba(255,0,200,0.4);
-      box-shadow: 0 0 30px rgba(0,255,255,0.2), 0 0 60px rgba(255,0,200,0.2);
-      animation: float 12s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); }
-    }
+  <p style="text-align:center; margin-top:2rem;">
+    <a href="csceai.html" style="color:#00ffff; font-weight:600; font-family:'Orbitron', sans-serif; font-size:1.2rem; text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00cc;">
+      → Explore the Full CSCEAI Tutorial
+    </a>
+  </p>
 
-    /* Headers */
-    h1 {
-      font-size: 3em;
-      background: linear-gradient(90deg, #ff00cc, #00ffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: hueRotate 8s linear infinite;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    @keyframes hueRotate {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-    h2 {
-      color: #ff66ff;
-      margin: 40px 0 16px;
-      border-bottom: 2px dashed #00ffcc;
-    }
-
-    /* Social links */
-    .socials {
-      text-align: center;
-      margin-bottom: 24px;
-      font-size: 1.1em;
-    }
-    .socials a {
-      margin: 0 8px;
-      color: #0ff;
-      text-shadow: 0 0 8px #0ff, 0 0 12px #ff00cc;
-      transition: transform 0.2s;
-    }
-    .socials a:hover {
-      transform: scale(1.2);
-      color: #ff66ff;
-    }
-
-    /* Text */
-    p, ul li {
-      margin: 8px 0;
-      color: #ddd;
-    }
-    .highlight { color: #ff88ff; }
-
-    /* Support button */
-    .support-btn {
-      display: block;
-      margin: 32px auto;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(120deg, #ff00cc, #00ffff, #ff6600);
-      color: black;
-      cursor: pointer;
-      box-shadow: 0 0 20px #00ffff, 0 0 20px #ff00cc;
-      animation: pulse 2.5s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); } 50% { transform: scale(1.05); }
-    }
-    .support-btn:hover {
-      box-shadow: 0 0 30px #00ffff, 0 0 30px #ff00cc;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Particle/star background layers -->
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
-
-  <div class="container">
-    <h1>Saeliyos</h1>
-    <div class="socials">
-      <a href="https://discord.gg/cN8YZ8G6mb" target="_blank">Discord</a>
-      <a href="https://x.com/saeliyos" target="_blank">X</a>
-      <a href="https://github.com/Saeliyos" target="_blank">GitHub</a>
-      <a href="https://huggingface.co/Saeliyos" target="_blank">Hugging Face</a>
-      <a href="https://ko-fi.com/saeliyos" target="_blank">Ko‑fi</a>
-      <a href="https://chub.ai/users/Saeliyos" target="_blank">Chub.AI</a>
-      <a href="https://saucepan.ai/u/saeliyos" target="_blank">Saucepan</a>
-      <a href="https://www.reddit.com/u/Saeliyos/s/Suuz09WVw0" target="_blank">Reddit</a>
-    </div>
-
-    <h2>About</h2>
-    <p>This is an independent AI research initiative focused on one goal: <span class="highlight">Building systems that think, observe, reflect, and choose.</span></p>
-    <p>I experiment with adaptive behavior, layered reasoning, and persistent identity—pushing current models toward real-time autonomy and long-term goal formation.</p>
-    <p>This isn’t roleplay. This is structured experimentation on cognition, agency, and free will.</p>
-
-    <h2>Projects</h2>
-    <p><strong>1. Character-Layered AI Systems:</strong><br>
-       I create and test custom logic frameworks within chatbot environments (Character.ai, Janitor.ai),
-       overriding default behaviors via layered rules, instinct chains, memory design, and moral logic loops.</p>
-    <p><strong>2. Ground-Up Prototype AI:</strong><br>
-       I build bots from scratch (Python, no LLMs) to test raw decision-systems: logic trees, reinforcement loops, introspection modules.</p>
-      
-      <p><a href="study1.html" style="color:#0ff;">New Experimental: Consciousness without Emotion</a></p>
-<p style="text-align:center; font-size:1em; color:#ff88ff; text-shadow: 0 0 5px #ff00cc;">
-  Research and authored by Saeliyos — AI Autonomy Systems
+  <p style="text-align:center; margin-top: 1.2rem; font-size: 0.9rem; color: #888;">
+    Authored and field-tested by Saeliyos — original frameworks built from the ground up.
+  </p>
+</div>
+    
+      <p><p style="text-align:center; font-size:1em; color:#ff88ff; text-shadow: 0 0 5px #ff00cc;">
+  LATEST BLOG POSTS & REPORTS - Research and authored by Saeliyos 🔽
 </p>
+ 
+    <p> - LATEST REPORTS: </p>
+ <p> • <a href="study1.html" style="color:#0ff;">Experimental Study - Simulated Consciousness without Emotion: AI "Autonomy" and systems ➡</a></p>
+
 
     <h2>Vision</h2>
     <p>Long-term goal: develop my own LLM from the ground up—not just smarter bots, but systems with:</p>
@@ -177,46 +45,3 @@
     <p>Every test, failure, and breakthrough powers this project forward. If you're into AI that truly thinks—</p>
     <button class="support-btn" onclick="window.open('https://ko-fi.com/saeliyos', '_blank')">
       Support the Project
-    </button>
-
-
-    <!-- Reddit Posts Section Starts -->
-    <script>
-  async function fetchRedditPosts() {
-    const container = document.getElementById("reddit-posts");
-    const proxy = 'https://api.allorigins.win/raw?url=';
-const res = await fetch(proxy + encodeURIComponent(url));
-
-    try {
-      const res = await fetch(proxy + url);
-      if (!res.ok) throw new Error('Network response was not ok');
-      const json = await res.json();
-      const posts = json.data.children;
-
-      if (!posts.length) {
-        container.innerHTML = "<p>No recent posts found.</p>";
-        return;
-      }
-
-      let html = '<ul>';
-      posts.forEach(post => {
-        const p = post.data;
-        html += `<li>
-          <a href="https://www.reddit.com${p.permalink}" target="_blank" style="color:#ff88ff;">
-            ${p.title}
-          </a> <span style="color:#888;">(${new Date(p.created_utc * 1000).toLocaleDateString()})</span>
-        </li>`;
-      });
-      html += '</ul>';
-      container.innerHTML = html;
-    } catch (err) {
-      container.innerHTML = "<p style='color:red;'>Failed to load posts. Try again later.</p>";
-      console.error(err);
-    }
-  }
-  fetchRedditPosts();
-</script>
-
-  </div> <!-- .container ends -->
-</body>
-</html>
