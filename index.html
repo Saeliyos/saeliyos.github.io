@@ -124,6 +124,42 @@
     .support-btn:hover {
       box-shadow: 0 0 30px #00ffff, 0 0 30px #ff00cc;
     }
+    
+    .glow-gold {
+  font-weight: bold;
+  color: #b8860b; 
+  position: relative;
+  background: linear-gradient(90deg, #d4af37 25%, #fff 50%, #d4af37 75%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 3px #b8860b,  
+    0 0 5px #8b6914;  
+  animation: shimmer-metal 3s linear infinite;
+}
+
+@keyframes shimmer-metal {
+  0% {
+    background-position: 200% 0;
+    text-shadow:
+      0 0 2px #b8860b,
+      0 0 4px #8b6914;
+  }
+  50% {
+    background-position: -50% 0;
+    text-shadow:
+      0 0 6px #fffacd,
+      0 0 8px #fffacd;
+  }
+  100% {
+    background-position: 200% 0;
+    text-shadow:
+      0 0 2px #b8860b,
+      0 0 4px #8b6914;
+  }
+}  
+
   </style>
 </head>
 <body>
@@ -162,7 +198,7 @@
   margin-left: auto;
   margin-right: auto;
 ">
-  To browse all my tutorials, guides, research, and bot development reports <strong><i>specifically</strong></i> curated for <span style="color: #ff88ff;"><strong>Janitor AI (J.AI)</strong></span> content and bot creation:
+  To browse all my tutorials, guides, research, and bot development reports <strong><i><u>specifically</strong></i></u> curated for <span class="glow-gold"><strong>Janitor AI (J.AI)</strong></span> content and bot creation:
   <a href="janitor-ai.html" style="color:#00ffff; text-decoration: underline; font-weight: 600;">
     click here →
   </a>
